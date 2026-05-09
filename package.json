@@ -1,0 +1,53 @@
+{
+  "name": "vscode-auto-profile",
+  "displayName": "Auto Profile Switcher",
+  "description": "Automatically switches VS Code profiles based on workspace project type",
+  "version": "0.1.2",
+  "publisher": "lash",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Auto Profile Switcher",
+      "properties": {
+        "autoProfile.rules": {
+          "type": "object",
+          "default": {
+            "Cargo.toml": "Rust",
+            "Gemfile": "Ruby",
+            "composer.json": "PHP",
+            "pyproject.toml": "Python",
+            "requirements.txt": "Python"
+          },
+          "description": "Map marker files to VS Code profile names. Keys are filenames to detect in workspace root, values are profile names as shown in VS Code's profile list."
+        },
+        "autoProfile.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable auto profile switching"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./tsconfig.json",
+    "watch": "tsc -watch -p ./tsconfig.json",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.97.0",
+    "typescript": "^5.7.0",
+    "@vscode/vsce": "^3.0.0"
+  }
+}
