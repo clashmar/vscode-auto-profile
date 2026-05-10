@@ -4,6 +4,10 @@
   "description": "Automatically switches VS Code profiles based on workspace project type",
   "version": "0.1.2",
   "publisher": "lash",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lash/vscode-auto-profile"
+  },
   "license": "MIT",
   "engines": {
     "vscode": "^1.97.0"
