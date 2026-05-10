@@ -6,7 +6,7 @@
   "publisher": "lash",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lash/vscode-auto-profile"
+    "url": "https://github.com/clashmar/vs-code-auto-profile"
   },
   "license": "MIT",
   "engines": {
